@@ -1,0 +1,19 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<%- include('menu'); -%>
+
+<div class="container">
+    <form action="/findcar" method="POST" role="form">
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label for="">Car Id</label>
+                    <input type="text" class="form-control" name="carid" placeholder="Input field">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
