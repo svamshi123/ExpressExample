@@ -37,3 +37,20 @@ app.post('/findcar', (req, res) => {
         });
     });
 });
+app.get('/insertCar',(req,res)=>{
+    res.render('insertCar');
+})
+app.post('/insert',(req,res) => {
+    let id =  req.body.carid;
+    let make = req.body.make;
+    let model = req.body.model;
+    let variant = req.body.variant;
+    
+    let sql = "insert into cartable(id,make,model,variant) values('" +id + "', '" + make + "', '" + model + "', '" + variant +"')";
+    db.execute(sql,(err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.redirect('/');
+    });
+});
